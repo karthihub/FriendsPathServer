@@ -3,11 +3,11 @@ var router = express.Router();
 var mysql = require('mysql');
 var FCM = require('fcm-push');
 var dbConnection =  mysql.createConnection({
-    host     : 'localhost',
-    // port     : '8081',
-    user     : 'root',
-    password : '',
-    database : 'friendspathdb'
+  host     : '127.0.0.1',
+  port     : '3306',
+  user     : 'karthivasa',
+  password : 'vasa@198karthi',
+  database : 'friendspathdb'
 });
 var sendPush = require('../public/javascripts/pushFunction');
 var responceFile = require('../public/javascripts/responceFile');
