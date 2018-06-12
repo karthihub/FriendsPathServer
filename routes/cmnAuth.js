@@ -3,7 +3,7 @@ var router = express.Router();
 var mysql = require('mysql');
 var FCM = require('fcm-push');
 var dbConnection =  mysql.createConnection({
-  host     : '127.0.0.1',
+  host     : '172.30.176.228',
   port     : '3306',
   user     : 'karthivasa',
   password : 'vasa@198karthi',
