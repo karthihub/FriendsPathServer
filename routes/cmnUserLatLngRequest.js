@@ -21,7 +21,7 @@ router.post('/newLatLngRequest', function(req, res) {
         dbConnection.query("SELECT * FROM usercontacts WHERE userID="+req.body.userID+" && userStar='Y'", function (err, result, fields) {
             if (err){
                 responceFile.status = 401;
-                responceFile.message = "Database Error, Please try again";
+                responceFile.message = "Database Error, Please try again 0"+err;
                 res.send(responceFile);
             }else if(result){
                 if(result.length == 1){
@@ -32,7 +32,7 @@ router.post('/newLatLngRequest', function(req, res) {
                     dbConnection.query("SELECT * FROM usertable WHERE userMobile='"+userMobile+"'", function (err, result, fields) {
                         if (err){
                             responceFile.status = 401;
-                            responceFile.message = "Database Error, Please try again";
+                            responceFile.message = "Database Error, Please try again 111"+err;
                             res.send(responceFile);
                         }
                         else if (result.length == 1){
@@ -123,7 +123,7 @@ router.post('/newLatLngRequest', function(req, res) {
                                 dbConnection.query("SELECT * FROM userlatlng where userID='"+result[0].userID+"'", function (err, result, fields) {
                                     if(err){
                                         responceFile.status = 401;
-                                        responceFile.message = "Database Error, Please try again";
+                                        responceFile.message = "Database Error, Please try again 3"+err;
                                         res.send(responceFile);
                                       }
                                       else{
@@ -137,7 +137,7 @@ router.post('/newLatLngRequest', function(req, res) {
                             }
                         }else{
                             responceFile.status = 401;
-                            responceFile.message = "Database Error, Please try again";
+                            responceFile.message = "Database Error, Please try again 4"+err;
                             res.send(responceFile);
                         }
                     });
@@ -157,7 +157,7 @@ router.post('/newLatLngRequest', function(req, res) {
         dbConnection.query("SELECT * FROM usertable WHERE userMobile='"+userMobile+"'", function (err, result, fields) {
             if (err){
                 responceFile.status = 401;
-                responceFile.message = "Database Error, Please try again";
+                responceFile.message = "Database Error, Please try again 5"+err;
                 res.send(responceFile);
             }
             else if (result.length == 1){
@@ -193,7 +193,7 @@ router.post('/newLatLngRequest', function(req, res) {
                             dbConnection.query("INSERT INTO friendsreq (reqNumber,reqStatus) values("+tempfreqID+",'S')", function (err, result, fields) {
                                 if (err) {
                                     responceFile.status = 401;
-                                    responceFile.message = "Database Error, Please try again";
+                                    responceFile.message = "Database Error, Please try again 6"+err;
                                     res.send(responceFile);
                                 }else if(result){
                                     var timeInSec = 5;
@@ -203,7 +203,7 @@ router.post('/newLatLngRequest', function(req, res) {
                                         dbConnection.query("SELECT * FROM friendsreq WHERE reqNumber='"+tempfreqID+"'", function (err, result, fields) {
                                             if (err) {
                                                 responceFile.status = 401;
-                                                responceFile.message = "Database Error, Please try again";
+                                                responceFile.message = "Database Error, Please try again 7"+err;
                                                 res.send(responceFile);
                                                 clearInterval(checkRequestState);
                                             }else if(result){
@@ -242,7 +242,7 @@ router.post('/newLatLngRequest', function(req, res) {
                     dbConnection.query("SELECT * FROM userlatlng where userID='"+result[0].userID+"'", function (err, result, fields) {
                         if(err){
                             responceFile.status = 401;
-                            responceFile.message = "Database Error, Please try again";
+                            responceFile.message = "Database Error, Please try again 8"+err;
                             res.send(responceFile);
                           }
                           else{
@@ -256,7 +256,7 @@ router.post('/newLatLngRequest', function(req, res) {
                 }
             }else{
                 responceFile.status = 401;
-                responceFile.message = "Database Error, Please try again";
+                responceFile.message = "Database Error, Please try again 9"+err;
                 res.send(responceFile);
             }
         });
@@ -275,7 +275,7 @@ router.post('/getNotificationList', function (req, res) {
     dbConnection.query(query, function (err, result, fields) {
         if (err) {
             responceFile.status = 401;
-            responceFile.message = "Database Error, Please try again";
+            responceFile.message = "Database Error, Please try again 10"+err;
             res.send(responceFile);
         } else if (result) {
             responceFile.status = 200;
@@ -293,7 +293,7 @@ router.post('/deleteProject', function(req, res){
     dbConnection.query(query, function (err, result, fields) {
         if (err){
             responceFile.status = 401;
-            responceFile.message = "Database Error, Please try again";
+            responceFile.message = "Database Error, Please try again 11"+err;
             responceFile.body = [];
             res.send(responceFile);
         }else if(result){
