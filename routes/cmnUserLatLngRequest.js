@@ -74,7 +74,7 @@ router.post('/newLatLngRequest', function(req, res) {
                                         dbConnection.query("INSERT INTO friendsreq (reqNumber,reqStatus) values("+tempfreqID+",'S')", function (err, result, fields) {
                                             if (err) {
                                                 responceFile.status = 401;
-                                                responceFile.message = "Database Error, Please try again";
+                                                responceFile.message = "Database Error, Please try again 1"+err;
                                                 res.send(responceFile);
                                             }else if(result){
                                                 var timeInSec = 5;
@@ -84,7 +84,7 @@ router.post('/newLatLngRequest', function(req, res) {
                                                     dbConnection.query("SELECT * FROM friendsreq WHERE reqNumber='"+tempfreqID+"'", function (err, result, fields) {
                                                         if (err) {
                                                             responceFile.status = 401;
-                                                            responceFile.message = "Database Error, Please try again";
+                                                            responceFile.message = "Database Error, Please try again 2"+err;
                                                             res.send(responceFile);
                                                             clearInterval(checkRequestState);
                                                         }else if(result){
