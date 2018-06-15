@@ -153,6 +153,11 @@ router.post('/newLatLngRequest', function(req, res) {
     }else{
         userMobile = req.body.userMobile;
 
+        var userDetails = [{
+            userName : req.body.userName,
+            userMobile : req.body.userMobilefrom
+        }];
+
         responceFile.body = [];
         dbConnection.query("SELECT * FROM usertable WHERE userMobile='"+userMobile+"'", function (err, result, fields) {
             if (err){
@@ -161,7 +166,7 @@ router.post('/newLatLngRequest', function(req, res) {
                 res.send(responceFile);
             }
             else if (result.length == 1){
-                var userDetails = result;
+                // var userDetails = result;
                 if(result[0].userSession == 1){
     
                     var fcm = new FCM('AAAAreQgzMg:APA91bGOFhBltwgfzL1r31JXDcL-DEHohoez5yE057_pErucyof3Iy5W1MyWNHsSHNyDVN3MtJBgkIPH5Ez46Vq8CvgVYYnEb8PYX6yo_qUKkwP9NiRl-1Q_I9oJOv5VJWLJaTEhwmQ6');
