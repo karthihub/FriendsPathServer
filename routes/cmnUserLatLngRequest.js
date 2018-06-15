@@ -16,6 +16,10 @@ router.post('/newLatLngRequest', function(req, res) {
     var tempfreqID = Math.floor(Math.random() * (999999 - 1 + 000001)) + 000001;
     var userreciveID,usersentID,userreciveName;
     if(req.body.userID){
+        var userDetails = [{
+            userName : req.body.userName,
+            userMobile : req.body.userMobile
+        }];
         usersentID = req.body.userID;
         userreciveName = req.body.userName;
         dbConnection.query("SELECT * FROM usercontacts WHERE userID="+req.body.userID+" && userStar='Y'", function (err, result, fields) {
@@ -36,7 +40,7 @@ router.post('/newLatLngRequest', function(req, res) {
                             res.send(responceFile);
                         }
                         else if (result.length == 1){
-                            var userDetails = result;
+                            // var userDetails = result;
                             if(result[0].userSession == 1){
                                 userreciveID = result[0].userID;
                                 //userreciveName = result[0].userName;
