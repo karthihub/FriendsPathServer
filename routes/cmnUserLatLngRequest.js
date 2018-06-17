@@ -237,6 +237,7 @@ router.post('/newLatLngRequest', function(req, res) {
                                         });
     
                                         if(timeInSec == 60){
+                                            console.log("exit clearInterval......");
                                             responceFile.status = 401;
                                             responceFile.message = "User is busy now, Please try after sometime..";
                                             res.send(responceFile);
