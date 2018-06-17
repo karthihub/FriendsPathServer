@@ -112,7 +112,7 @@ router.post('/newLatLngRequest', function(req, res) {
                 
                                                     });
                 
-                                                    if(timeInSec == 60){
+                                                    if(timeInSec == 30){
                                                         responceFile.status = 401;
                                                         responceFile.message = "User is offline, Please try after sometime..";
                                                         res.send(responceFile);
