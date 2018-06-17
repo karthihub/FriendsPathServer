@@ -59,7 +59,7 @@ router.post('/useAuthendication', function(req, res){
                           console.log("User current timestamp Added..")
                         }
                     });
-                  }else if(result.length == 1){
+                  }else if(result.length == 1 && userLatitude != undefined && userLongitude != undefined){
                     dbConnection.query("UPDATE userlatlng SET userLat='"+userLatitude+"',userLng='"+userLongitude+"',timesTamp='"+CurrentTimeStamp+"' where userID='"+result[0].userID+"'", function (err, result, fields) {
                       if(result){
                           console.log("User current timestamp Added..", fcm_tocken);
