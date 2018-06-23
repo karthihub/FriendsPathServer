@@ -48,20 +48,19 @@ router.post('/newLatLngRequest', function(req, res) {
                                 var message = {
                                     to: result[0].fcm_tocken,
                                     collapse_key: 'Demo', 
-                                    notification: {
-                                        title: "New User Request",
-                                        message : "here is a message. message",
-                                        body: [{
-                                            reqCoords:[{
-                                                latitude : userLat,
-                                                longitude : userLng
-                                                }],
-                                            userDetails : userDetails,
-                                            message : "Your friend want to meet you..",
-                                            tempfreqID : tempfreqID
-                                        }],
-                  
-                                    }
+                                    "notification": {
+                                        "title": "New User Request",
+                                        "body": "Your friend "+userDetails[0].userName+" want to meet you..",
+                                        "notId": 10
+                                      },
+                                      "data": [{
+                                        "reqCoords":[{
+                                            "latitude" : userLat,
+                                            "longitude" : userLng
+                                            }],
+                                        "userDetails" : userDetails,
+                                        "tempfreqID" : tempfreqID
+                                    }]
                                 };
                                 //callback style
                                 fcm.send(message, function(err, response){
@@ -179,14 +178,22 @@ router.post('/newLatLngRequest', function(req, res) {
                         to: result[0].fcm_tocken,
                         collapse_key: 'Demo', 
                         "notification": {
-                            "title": "Test Notification",
-                            "body": "This offer expires at 11:30 or whatever",
+                            "title": "New User Request",
+                            "body": "Your friend "+userDetails[0].userName+" want to meet you..",
                             "notId": 10
                           },
-                          "data": {
-                            "surveyID": "ewtawgreg-gragrag-rgarhthgbad"
-                          }
+                          "data": [{
+                            "reqCoords":[{
+                                "latitude" : userLat,
+                                "longitude" : userLng
+                                }],
+                            "userDetails" : userDetails,
+                            "tempfreqID" : tempfreqID
+                        }]
                     };
+
+
+
 
                     //callback style
                     fcm.send(message, function(err, response){
