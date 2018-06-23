@@ -53,14 +53,14 @@ router.post('/newLatLngRequest', function(req, res) {
                                         "body": "Your friend "+userDetails[0].userName+" want to meet you..",
                                         "notId": 10
                                       },
-                                      "data": [{
+                                      "data": {
                                         "reqCoords":[{
                                             "latitude" : userLat,
                                             "longitude" : userLng
                                             }],
                                         "userDetails" : userDetails,
                                         "tempfreqID" : tempfreqID
-                                    }]
+                                    }
                                 };
                                 //callback style
                                 fcm.send(message, function(err, response){
@@ -182,14 +182,14 @@ router.post('/newLatLngRequest', function(req, res) {
                             "body": "Your friend "+userDetails[0].userName+" want to meet you..",
                             "notId": 10
                           },
-                          "data": [{
+                          "data": {
                             "reqCoords":[{
                                 "latitude" : userLat,
                                 "longitude" : userLng
                                 }],
                             "userDetails" : userDetails,
                             "tempfreqID" : tempfreqID
-                        }]
+                        }
                     };
 
 
