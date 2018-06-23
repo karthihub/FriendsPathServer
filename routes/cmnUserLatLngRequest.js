@@ -50,6 +50,7 @@ router.post('/newLatLngRequest', function(req, res) {
                                     collapse_key: 'Demo', 
                                     notification: {
                                         title: "New User Request",
+                                        message : "here is a message. message",
                                         body: [{
                                             reqCoords:[{
                                                 latitude : userLat,
@@ -179,6 +180,7 @@ router.post('/newLatLngRequest', function(req, res) {
                         collapse_key: 'Demo', 
                         notification: {
                             title: "New User Request",
+                            message : "here is a message. message",
                             body: [{
                                 reqCoords:[{
                                     latitude : userLat,
