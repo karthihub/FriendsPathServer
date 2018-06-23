@@ -180,18 +180,17 @@ router.post('/newLatLngRequest', function(req, res) {
                         collapse_key: 'Demo', 
                         notification: {
                             title: "New User Request",
-                            message : "here is a message. message",
-                            body: [{
-                                reqCoords:[{
-                                    latitude : userLat,
-                                    longitude : userLng
-                                    }],
-                                userDetails : userDetails,
-                                message : "Your friend want to meet you..",
-                                tempfreqID : tempfreqID
-                            }],
-      
-                        }
+                            message : "Your friend want to meet you..",    
+                        },
+                        data: [{
+                            reqCoords:[{
+                                latitude : userLat,
+                                longitude : userLng
+                                }],
+                            userDetails : userDetails,
+                            message : "Your friend want to meet you..",
+                            tempfreqID : tempfreqID
+                        }]
                     };
                     //callback style
                     fcm.send(message, function(err, response){
