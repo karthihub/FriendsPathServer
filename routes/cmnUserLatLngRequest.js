@@ -180,7 +180,7 @@ router.post('/newLatLngRequest', function(req, res) {
                         collapse_key: 'Demo', 
                         notification: {
                             title: "New User Request",
-                            message : "Your friend want to meet you..",    
+                            body : "Your friend want to meet you..",    
                         },
                         data: [{
                             reqCoords:[{
@@ -192,6 +192,7 @@ router.post('/newLatLngRequest', function(req, res) {
                             tempfreqID : tempfreqID
                         }]
                     };
+
                     //callback style
                     fcm.send(message, function(err, response){
                         if (err) {
