@@ -59,7 +59,9 @@ router.post('/newLatLngRequest', function(req, res) {
                                             "longitude" : userLng
                                             }],
                                         "userDetails" : userDetails,
-                                        "tempfreqID" : tempfreqID
+                                        "tempfreqID" : tempfreqID,
+                                        "image": 'www/image/icon.png',
+                                        "soundname": "default"
                                     }
                                 };
                                 //callback style
@@ -188,7 +190,9 @@ router.post('/newLatLngRequest', function(req, res) {
                                 "longitude" : userLng
                                 }],
                             "userDetails" : userDetails,
-                            "tempfreqID" : tempfreqID
+                            "tempfreqID" : tempfreqID,
+                            "image": 'www/image/icon.png',
+                            "soundname": "default"
                         }
                     };
 
