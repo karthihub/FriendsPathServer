@@ -63,11 +63,11 @@ router.post('/useAuthendication', function(req, res){
                     dbConnection.query("UPDATE userlatlng SET userLat='"+userLatitude+"',userLng='"+userLongitude+"',timesTamp='"+CurrentTimeStamp+"' where userID='"+result[0].userID+"'", function (err, result, fields) {
                       if(result){
                           console.log("User current timestamp Added..", fcm_tocken);
-                          dbConnection.query("UPDATE usertable SET fcm_tocken='"+fcm_tocken+"', userSession=1 where userID='"+userIDTemp+"'", function (err, result, fields) {
-                            if(result){
-                              console.log("User fTocken is Updated...");
-                            }
-                          });
+                      }
+                    });
+                    dbConnection.query("UPDATE usertable SET fcm_tocken='"+fcm_tocken+"', userSession=1 where userID='"+userIDTemp+"'", function (err, result, fields) {
+                      if(result){
+                        console.log("User fTocken is Updated...");
                       }
                     });
                   }
